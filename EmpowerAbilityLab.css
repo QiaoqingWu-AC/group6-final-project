@@ -18,7 +18,7 @@ header {
   color: #434343;
 }
 
-.nav-link:hover {
+.nav-link:hover .nav-active {
   background-color: #3A8FB7;
   color: white;
   border-radius: 5px;

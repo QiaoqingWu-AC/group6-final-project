@@ -1,11 +1,7 @@
-//Template Function that can be used to run JavaScript on the page
-//Note: This can be changed to whatever JavaScript formatting you would like
-function knowledgeRunner(){
+// toggle event of button "Meet the Empower Community"
+const meetBtn = document.getElementById("meetBtn");
+const lightBx = document.getElementById("lightbox");
 
-}
-
-
-
-
-
-knowledgeRunner()
+meetBtn.addEventListener("click", () => {
+  
+});
