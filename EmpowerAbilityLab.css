@@ -30,3 +30,8 @@ a.nav-link:hover, a.nav-link:focus {
   color: white;
   border-radius: 5px;
 }
+
+/* lightbox */
+#lightbox {
+  margin-top: 20px;
+}
