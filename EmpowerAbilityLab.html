@@ -1,92 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Foster understanding and promote inclusive digital experiences for all">
-    <meta name="author" content="">
-    <!-- Added by QW: Page title -->
-    <title>Empower Ability Labs</title>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Foster understanding and promote inclusive digital experiences for all">
+  <meta name="author" content="">
+  <title>Empower Ability Labs</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/4.0/examples/jumbotron/jumbotron.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Custom styles for Empower Ability Labs -->
-    <link rel="stylesheet" href="EmpowerAbilityLab.css"> 
-  </head>
+  <!-- Bootstrap core CSS -->
+  <link href="https://getbootstrap.com/docs/4.0/examples/jumbotron/jumbotron.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Custom styles for Empower Ability Labs -->
+  <link rel="stylesheet" href="EmpowerAbilityLab.css"> 
+</head>
 
-  <body>
-    <!-- Fixed by QW: Modify <div> to <header> landmark -->
-    <header class="navbar navbar-expand-md fixed-top bg-light">
-      <!-- Added by QW: Page logo -->
-      <a class="navbar-brand" href="https://www.google.ca/"><img src="./images/empowerabilitylabslogo.png" alt="empower ability labs logo" ></a>
-      <!-- Main Navigation for Empower Ability Labs-->
-      <nav> 
-        <div class="collapse navbar-collapse" id="navbar">
-          <!-- Added by QW: Horizontal Navbar -->
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link nav-active" href="EmpowerAbilityLab.html" >Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Schedule a call</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+<body>
+  <!-- Fixed by QW: Modify <div> to <header> landmark -->
+  <header class="navbar navbar-expand-md fixed-top bg-light">
+    <a class="navbar-brand" href="https://www.google.ca/"><img src="./images/empowerabilitylabslogo.png" alt="empower ability labs logo" ></a>
+    <!-- Main Navigation for Empower Ability Labs-->
+    <nav> 
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link nav-active" href="EmpowerAbilityLab.html" >Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Schedule a call</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-    <main>
-      <!-- Main landing view -->
-      <!-- Added by QW: h1, p, button -->
-      <div class="jumbotron">
-        <div class="container">
-          <h1 class="h1">Welcome to Empower Ability Labs!</h1>
+  <main>
+    <!-- Main landing view -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="h1">Welcome to Empower Ability Labs!</h1>
+        <p>
+          Empower Ability Labs is a hub for learning and empathy-building.  We are on a mission to foster understanding and promote inclusive digital experiences for all. We offer a range of services designed to promote accessibility awareness, drive inclusively, and enhance the user experience. And help you find answers on How do people with disabilities use technology and navigate the digital world? What tools do they employ?
+        </p>
+        <button class="btn-primary" id="meetBtn" aria-controls="lightbox">Meet the Empower Community</button>
+      </div>
+    </div>
+
+    <div class="container invisible" id="lightbox">
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Our Approach</h2>
           <p>
-            Empower Ability Labs is a hub for learning and empathy-building.  We are on a mission to foster understanding and promote inclusive digital experiences for all. We offer a range of services designed to promote accessibility awareness, drive inclusively, and enhance the user experience. And help you find answers on How do people with disabilities use technology and navigate the digital world? What tools do they employ?
+            Empower Ability Labs utilizes a hands-on approach to raise awareness and promote empathy. Our immersive workshops and lab days provide participants with a unique opportunity to step into the shoes of individuals with disabilities and navigate the world from their perspective.
           </p>
-          <button class="btn-primary" id="meetBtn" aria-controls="lightbox">Meet the Empower Community</button>
+          <a href="https://www.google.com/search/howsearchworks/our-approach/">Learn More</a>
+        </div>
+        <div class="col-md-4">
+          <h2>Services</h2>
+          <p>
+            Promote accessibility awareness and enhance the user experience.
+            <ul>
+              <li>Empathy lab days and workshops</li>
+              <li>Go beyond WCAG compliance!</li>
+              <li>Inspirational speakers.</li>
+            </ul>
+          </p>
+          <a href="https://www.elevenways.be/en/services">Learn More</a>
+        </div>
+        <div class="col-md-4">
+          <h2>Testimonials</h2>
+          <p>
+            Invite a speaker with disabilities to share their unique journey. This captivating addition to your upcoming event will offer insights that resonate,  inspire, educate, and enrich your team’s understanding of inclusion.
+          </p>
+          <a href="https://dictionary.cambridge.org/us/dictionary/english/testimonial">Learn More</a>
         </div>
       </div>
+    </div> <!-- /container -->
 
-      <div class="container invisible" id="lightbox">
-        <!-- Added by QW: columns of h2, p, a link -->
-        <div class="row">
-          <div class="col-md-4">
-            <h2>Our Approach</h2>
-            <p>
-              Empower Ability Labs utilizes a hands-on approach to raise awareness and promote empathy. Our immersive workshops and lab days provide participants with a unique opportunity to step into the shoes of individuals with disabilities and navigate the world from their perspective.
-            </p>
-            <a href="https://www.google.com/search/howsearchworks/our-approach/">Learn More</a>
-          </div>
-          <div class="col-md-4">
-            <h2>Services</h2>
-            <p>
-              Promote accessibility awareness and enhance the user experience.
-              <ul>
-                <li>Empathy lab days and workshops</li>
-                <li>Go beyond WCAG compliance!</li>
-                <li>Inspirational speakers.</li>
-              </ul>
-            </p>
-            <a href="https://www.elevenways.be/en/services">Learn More</a>
-          </div>
-          <div class="col-md-4">
-            <h2>Testimonials</h2>
-            <p>
-              Invite a speaker with disabilities to share their unique journey. This captivating addition to your upcoming event will offer insights that resonate,  inspire, educate, and enrich your team’s understanding of inclusion.
-            </p>
-            <a href="https://dictionary.cambridge.org/us/dictionary/english/testimonial">Learn More</a>
-          </div>
-        </div>
-      </div> <!-- /container -->
+  </main>
 
-    </main>
+  <footer class="container">
+    <p>© Copyright Empower Ability Labs Inc 2023. All rights reserved.</p>
+  </footer>
 
-    <footer class="container">
-      <p>© Copyright Empower Ability Labs Inc 2023. All rights reserved.</p>
-    </footer>
+  <!-- JavaScript -->
+  <script src="EmpowerAbilityLab.js"></script>
 
-
-
-    <script src="EmpowerAbilityLab.js"></script>
-  
-
-  </body>
+</body>
 </html>
