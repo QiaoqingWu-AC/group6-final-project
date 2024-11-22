@@ -35,3 +35,8 @@ a.nav-link:hover, a.nav-link:focus {
 #lightbox {
   margin-top: 20px;
 }
+
+/* footer */
+footer {
+  margin-top: 40px;
+}
