@@ -1,10 +1,9 @@
-/* CSS for styling all the html elements */
 /* 
 * Fixed by QW 11-27-2024:
     1. Delete redundant css codes.
     2. Fix lightbox, the background color is too dark which not complied to
       color contrast ratio.
-    3. Delete color for h2, it against color contrast ratio
+    3. Delete color for h2 and p, fixed more color contrast errors
 */
 
 /* General styles for accessibility */
@@ -159,7 +158,6 @@ button {
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
-  background-color: #31799B;
   color: white;
 }
 
@@ -169,32 +167,12 @@ button:hover, button:focus {
 }
 
 /* Added by LZ */
-
-/* Main content */
-/* main {
-  margin-top: 120px; 
-} */
-
-/* no need to define jumbotron style in here */
-/* .jumbotron {
-  padding: 30px 20px;
-  background-color: #f0f4f8;
-} */
-
-.jumbotron img {
-  max-width: 100%;
-  height: auto;
-  margin-top: 15px;
-  border-radius: 10px; /* Slightly rounded corners */
-}
-
 h1, h2 {
   font-family: Arial, sans-serif;
 }
 
 p {
   line-height: 1.6;
-  color: #333;
 }
 
 /* Section styles */
