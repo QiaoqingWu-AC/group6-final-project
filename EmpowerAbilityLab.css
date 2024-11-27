@@ -10,7 +10,7 @@
 /* CSS for styling all the html elements */
 
 /* Added by LZ */
-:focus {
+:focus, a:hover, a:focus {
   outline: 3px solid #204E63;
   outline-offset: 2px;
 }
@@ -41,11 +41,20 @@ header {
   text-decoration: none; /* Clear underline for a cleaner look */   
 }
 
-a.nav-link:hover, a.nav-link:focus, a.nav-active {
+a.nav-active {
   background-color: #204E63;
   color: white;
   border-radius: 5px;
   text-decoration: none; /* Consistent hover style */
+}
+
+a.nav-link:hover, a.nav-link:focus {
+  background-color: #204E63;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none; /* Consistent hover style */
+  outline: 3px solid #204E63;
+  outline-offset: 2px;
 }
 
 /* lightbox */
