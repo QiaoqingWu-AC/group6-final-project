@@ -1,9 +1,15 @@
+<!-- 
+  Fixed by QW 11-27-2024: 
+    Delete all the role attributes for landmark tags. No need for that.
+    Fix css style, no need to modify the custom styles in css code.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Qiaoqing Wu, Yue Gao, Li Zhou, Caleb Watson-Danis">
+  <meta name="description" content="Page to schedule a call to EmpowerAbilityLab">
+  <meta name="author" content="Qiaoqing Wu, Li Zhou, Yue Gao">
   <title>Schedule a Call - Empower Ability Labs</title>
   <!-- Bootstrap core CSS -->
   <link href="https://getbootstrap.com/docs/4.0/examples/jumbotron/jumbotron.css" rel="stylesheet">
@@ -16,8 +22,9 @@
   <header class="navbar navbar-expand-md fixed-top bg-light">
     <a class="navbar-brand" href="https://www.google.ca/"><img src="./images/empowerabilitylabslogo.png" alt="empower ability labs logo" ></a>
     <!-- Main Navigation for Empower Ability Labs-->
-     <!-- Fixed by LZ, added role="navigation" aria-label="Main Navigation" -->
-    <nav role="navigation" aria-label="Main Navigation"> 
+    <!-- Fixed by LZ, added role="navigation" aria-label="Main Navigation" -->
+    <!-- Fixed by QW: deleted role -->
+    <nav aria-label="Main Navigation"> 
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="EmpowerAbilityLab.html" >Home</a></li>
@@ -29,8 +36,9 @@
   </header>
 
   <!-- main landmark -->
-   <!-- Fixed by Lz, added role="main" -->
-  <main role="main">
+  <!-- Fixed by Lz, added role="main" -->
+  <!-- Fixed by QW: deleted role. It is main landmark -->
+  <main>
     <div class="jumbotron">
       <div class="container">
         <!-- Fixed by Lz, added id="schedule-call-heading" -->
@@ -39,8 +47,9 @@
           At Empower Ability Labs, we are dedicated to cultivating empathy and driving positive change through immersive experiences.  Fill out the form below and we’ll get back to you as soon as we can to schedule a call with our sales team!
         </p>
         <!-- image for schedule a call -->
-         <!-- Fixed by LZ, added alt="Schedule a call illustration" -->
-        <img src="./images/scheduleacall.png" alt="Schedule a call illustration" >
+        <!-- Fixed by LZ, added alt="Schedule a call illustration" -->
+        <!-- Fixed by QW: deleted alt="Schedule a call illustration" -->
+        <img src="./images/scheduleacall.png" alt="" >
       </div>
     </div>
 
@@ -57,7 +66,7 @@
         <input type="email" id="email" name="email" required aria-required="true" title="Enter a valid email address."><br>
 
         <!-- fieldset -->
-         <!-- Fixed by Lz -->
+        <!-- Fixed by Lz -->
         <fieldset>
           <legend id="talk-options">What would you like to talk about?</legend>
           <div>
@@ -75,7 +84,7 @@
         </fieldset>
 
         <!-- text area -->
-         <!-- Fixed by LZ added for="textArea"-->
+        <!-- Fixed by LZ added for="textArea"-->
         <div>
           <label for="textArea">Tell us about your event</label><br>
           <textarea id="textArea" name="textArea" rows="5" cols="50" aria-describedby="textAreaHelp" placeholder="Provide details about your event">
@@ -99,7 +108,7 @@
   </main>
 
   <!-- footer landmark -->
-  <footer role="contentinfo" class="bg-dark text-white text-center py-3">
+  <footer class="bg-dark text-white text-center py-3">
     <p>© Copyright Empower Ability Labs Inc 2023. All rights reserved.</p>
   </footer>
 

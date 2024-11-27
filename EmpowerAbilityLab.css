@@ -1,9 +1,18 @@
 /* CSS for styling all the html elements */
+/* 
+* Fixed by QW 11-27-2024:
+    1. Delete redundant css codes.
+    2. Fix lightbox, the background color is too dark which not complied to
+      color contrast ratio.
+    3. Delete color for h2, it against color contrast ratio
+*/
 
 /* General styles for accessibility */
+/* CSS for styling all the html elements */
+
 /* Added by LZ */
 :focus {
-  outline: 3px solid #3A8FB7;
+  outline: 3px solid #31799B;
   outline-offset: 2px;
 }
 
@@ -33,27 +42,24 @@ header {
 }
 
 .nav-active {
-  background-color: #3A8FB7;
+  background-color: #31799B;
   color: white;
   border-radius: 5px;
-  padding: 5px 10px; /* Add padding for better click targets */
 }
 
 a.nav-link:hover, a.nav-link:focus {
-  background-color: #3A8FB7;
+  background-color: #31799B;
   color: white;
   border-radius: 5px;
   text-decoration: none; /* Consistent hover style */
 }
 
 /* lightbox */
-/* lightbox */
 #lightbox {
   margin-top: 20px; /* Space between the trigger and lightbox */
   display: none; /* Hidden by default */
   position: relative; /* Part of the normal flow */
-  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
-  color: white; /* Light text for contrast */
+  background-color: white;
   padding: 20px; /* Add spacing inside the lightbox */
   border-radius: 10px; /* Rounded corners */
   width: 100%; /* Full width under the trigger button */
@@ -64,15 +70,10 @@ a.nav-link:hover, a.nav-link:focus {
 #lightbox[aria-hidden="false"] {
   display: block; /* Make visible when active */
 }
+
 /* footer */
 footer {
   margin-top: 40px;
-  /* Added by LZ */
-  background-color: #3A8FB7;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-size: 14px;
 }
 
 /* container for toggle switch and text */
@@ -158,7 +159,7 @@ button {
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
-  background-color: #3A8FB7;
+  background-color: #31799B;
   color: white;
 }
 
@@ -170,14 +171,15 @@ button:hover, button:focus {
 /* Added by LZ */
 
 /* Main content */
-main {
-  margin-top: 120px; /* Offset to avoid overlapping fixed header */
-}
+/* main {
+  margin-top: 120px; 
+} */
 
-.jumbotron {
+/* no need to define jumbotron style in here */
+/* .jumbotron {
   padding: 30px 20px;
-  background-color: #f0f4f8; /* Light background for better readability */
-}
+  background-color: #f0f4f8;
+} */
 
 .jumbotron img {
   max-width: 100%;
@@ -188,7 +190,6 @@ main {
 
 h1, h2 {
   font-family: Arial, sans-serif;
-  color: #3A8FB7;
 }
 
 p {
@@ -241,8 +242,8 @@ textarea {
 
 textarea:focus,
 input:focus {
-  outline: 2px solid #3A8FB7; /* High-contrast focus outline */
-  border-color: #3A8FB7;
+  outline: 2px solid #31799B; /* High-contrast focus outline */
+  border-color: #31799B;
 }
 /* Fieldset and legend */
 fieldset {
