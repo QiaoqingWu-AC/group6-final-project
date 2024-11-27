@@ -1,3 +1,8 @@
+<!-- 
+  Fixed by QW 11-27-2024: 
+    Delete all the role attributes for landmark tags. No need for that.
+    Fix css style, no need to modify the custom styles in css code.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -48,10 +53,8 @@
         <!-- Fixed by LZ, added role="dialog" aria-labelledby="lightboxTitle" aria-hidden="true" -->
         <div id="lightbox" class="invisible" role="dialog" aria-labelledby="lightboxTitle" aria-hidden="true">
           <!-- Fixed by LZ, added button -->
-
           <!-- <span style="font-weight: bold;">Community Steering Committee</span> -->
-          <h2 id="lightboxTitle">Community Steering Committee</h2>
-          <!-- <button type="button" class="close-btn" aria-label="Close">×</button> -->
+          <h2 id="lightboxTitle">Community Steering Committee</h2> 
           <p>
             We get an aha! moments from product managers who try our services for the first time. We offered many lab days, workshops and offered usability testing services to many companies and organizations including:
             <ul>
@@ -62,6 +65,7 @@
               <li>Government of Canada</li>
             </ul>
           </p>
+          <!-- <button type="button" class="btn-dark" aria-label="Close">×</button> -->
         </div>
       </div>
     </div>

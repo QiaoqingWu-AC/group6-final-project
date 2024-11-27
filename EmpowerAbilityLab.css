@@ -11,7 +11,7 @@
 
 /* Added by LZ */
 :focus {
-  outline: 3px solid #31799B;
+  outline: 3px solid #204E63;
   outline-offset: 2px;
 }
 
@@ -33,21 +33,16 @@ header {
 
 /* navbar links */
 .nav-link {
-  color: #434343;
+  color: black;
   margin: 5px;
-    /* Added by LZ */
-  font-size: 16px; /* Ensure readable font size */
+  /* Added by LZ */
+  /* Modified by QW */
+  font-size: 20px; /* Ensure readable font size */
   text-decoration: none; /* Clear underline for a cleaner look */   
 }
 
-.nav-active {
-  background-color: #31799B;
-  color: white;
-  border-radius: 5px;
-}
-
-a.nav-link:hover, a.nav-link:focus {
-  background-color: #31799B;
+a.nav-link:hover, a.nav-link:focus, a.nav-active {
+  background-color: #204E63;
   color: white;
   border-radius: 5px;
   text-decoration: none; /* Consistent hover style */
@@ -64,7 +59,6 @@ a.nav-link:hover, a.nav-link:focus {
   width: 100%; /* Full width under the trigger button */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
 }
-
 
 #lightbox[aria-hidden="false"] {
   display: block; /* Make visible when active */
@@ -129,11 +123,11 @@ footer {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #204E63;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #204E63;
 }
 
 input:checked + .slider::before {
@@ -161,9 +155,10 @@ button {
   color: white;
 }
 
-button:hover, button:focus {
-  background-color: #2a6f92;
-  outline: 2px solid white;
+button.btn-dark:hover, button.btn-dark:focus {
+  background-color: #204E63;
+  outline: 3px solid #204E63;
+  outline-offset: 3px;
 }
 
 /* Added by LZ */
@@ -220,8 +215,8 @@ textarea {
 
 textarea:focus,
 input:focus {
-  outline: 2px solid #31799B; /* High-contrast focus outline */
-  border-color: #31799B;
+  outline: 2px solid #204E63; /* High-contrast focus outline */
+  border-color: #204E63;
 }
 /* Fieldset and legend */
 fieldset {

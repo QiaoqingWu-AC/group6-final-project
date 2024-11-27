@@ -1,3 +1,9 @@
+<!-- 
+  Fixed by QW 11-27-2024: 
+    Delete all the role attributes for landmark tags. No need for that.
+    Fix css style, no need to modify the custom styles in css code.
+    Modify image's alt to empty.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,8 +45,8 @@
           Dedicated space or programs designed to cultivate empathy and understanding among individuals towards the challenges faced by people with disabilities in using technology and interacting with various environments.
         </p>
         <!-- img for services -->
-         <!-- Fixed by LZ, added the alt ="Illustration representing services" -->
-        <img src="./images/services.png" alt="Illustration representing services" >
+        <!-- Fixed by LZ, added the alt ="Illustration representing services" -->
+        <img src="./images/services.png" alt="" >
       </div>
 
       <!-- TO DO: might need a <aside> here for three services -->
@@ -49,7 +55,7 @@
 
     <div class="container">
       <!-- Section 1 -->
-       <!-- Fixed by LZ, added aria-labelledby="empathy-lab" -->
+      <!-- Fixed by LZ, added aria-labelledby="empathy-lab" -->
       <section aria-labelledby="empathy-lab">
         <!-- Fixed by LZ, added id="empathy-lab" -->
         <h2 id="empathy-lab">Empathy Lab days and workshops</h2>
@@ -59,7 +65,7 @@
       </section>
       
       <!-- Section 2 -->
-       <!-- Fixed by LZ, added aria-labelledby="inspirational-speakers" -->
+      <!-- Fixed by LZ, added aria-labelledby="inspirational-speakers" -->
       <section aria-labelledby="inspirational-speakers">
         <!-- Fixed by LZ, added id="inspirational-speakers" -->
         <h2 id="inspirational-speakers">Inspirational speakers</h2>
@@ -69,7 +75,7 @@
       </section>
         
       <!-- Section 3 -->
-       <!-- Fixed by  LZ, added aria-labelledby="usability-testing"-->
+      <!-- Fixed by  LZ, added aria-labelledby="usability-testing"-->
       <section aria-labelledby="usability-testing">
         <!-- Fixed by  LZ, added id="usability-testing"-->
         <h2 id="usability-testing">Usability testing</h2>
@@ -81,8 +87,8 @@
   </main>
 
   <!-- footer landmark -->
-   <!-- Fixed by LZ, added role="contentinfo" -->
-  <footer role="contentinfo" class="bg-dark text-white text-center py-3">
+  <!-- Fixed by LZ, added role="contentinfo" -->
+  <footer class="bg-dark text-white text-center py-3">
     <p>© Copyright Empower Ability Labs Inc 2023. All rights reserved.</p>
   </footer>
 

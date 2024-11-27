@@ -25,7 +25,7 @@ const emailField = document.getElementById("email");
 // Add a close button dynamically to the lightbox
 if (lightbox) {
   closeBtn.textContent = "×";
-  closeBtn.classList.add("close-btn");
+  closeBtn.classList.add("btn-dark");
   closeBtn.setAttribute("aria-label", "Close dialog");
   lightbox.appendChild(closeBtn);
 
