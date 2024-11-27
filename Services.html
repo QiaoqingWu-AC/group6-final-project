@@ -28,15 +28,18 @@
   </header>
 
   <!-- main landmark -->
-  <main>
+   <!-- Fixed by LZ, added role="main" -->
+  <main role="main">
     <div class="jumbotron">
       <div class="container">
-        <h1>Our Services</h1>
+        <!-- Fixed by LZ, added id="services-heading" -->
+        <h1 id="services-heading">Our Services</h1>
         <p>
           Dedicated space or programs designed to cultivate empathy and understanding among individuals towards the challenges faced by people with disabilities in using technology and interacting with various environments.
         </p>
         <!-- img for services -->
-        <img src="./images/services.png" alt="" >
+         <!-- Fixed by LZ, added the alt ="Illustration representing services" -->
+        <img src="./images/services.png" alt="Illustration representing services" >
       </div>
 
       <!-- TO DO: might need a <aside> here for three services -->
@@ -45,24 +48,30 @@
 
     <div class="container">
       <!-- Section 1 -->
-      <section>
-        <h2>Empathy Lab days and workshops</h2>
+       <!-- Fixed by LZ, added aria-labelledby="empathy-lab" -->
+      <section aria-labelledby="empathy-lab">
+        <!-- Fixed by LZ, added id="empathy-lab" -->
+        <h2 id="empathy-lab">Empathy Lab days and workshops</h2>
         <p>
           The lab days and workshops typically provide hands-on experiences, simulations, and interactions with assistive technologies, tools, and scenarios that replicate the obstacles individuals with disabilities encounter daily.
         </p>
       </section>
       
       <!-- Section 2 -->
-      <section>
-        <h2>Inspirational speakers</h2>
+       <!-- Fixed by LZ, added aria-labelledby="inspirational-speakers" -->
+      <section aria-labelledby="inspirational-speakers">
+        <!-- Fixed by LZ, added id="inspirational-speakers" -->
+        <h2 id="inspirational-speakers">Inspirational speakers</h2>
         <p>
           Invite a speaker with disabilities to take share their unique journey. This captivating addition to your upcoming event will offer insights that resonate, inspire, educate, and enrich your team collective understanding of inclusion.
         </p>
       </section>
         
       <!-- Section 3 -->
-      <section>
-        <h2>Usability testing</h2>
+       <!-- Fixed by  LZ, added aria-labelledby="usability-testing"-->
+      <section aria-labelledby="usability-testing">
+        <!-- Fixed by  LZ, added id="usability-testing"-->
+        <h2 id="usability-testing">Usability testing</h2>
         <p>
           Go beyond WCAG! Involve individuals with disabilities in usability testing to gather valuable insights for refining product strategy and identifying accessibility concerns at an early stage when solutions are more feasible and cost-effective. You have access to a diverse community of people with disabilities, who use various assistive technologies. With technical expertise ranging from novice to expert, our community can support your product lifecycle from user research, to design, to QA.
         </p>
@@ -71,7 +80,8 @@
   </main>
 
   <!-- footer landmark -->
-  <footer class="bg-dark text-white text-center py-3">
+   <!-- Fixed by LZ, added role="contentinfo" -->
+  <footer role="contentinfo" class="bg-dark text-white text-center py-3">
     <p>© Copyright Empower Ability Labs Inc 2023. All rights reserved.</p>
   </footer>
 

@@ -1,8 +1,18 @@
 /* CSS for styling all the html elements */
 
+/* General styles for accessibility */
+/* Added by LZ */
+:focus {
+  outline: 3px solid #3A8FB7;
+  outline-offset: 2px;
+}
+
 /* header */
 header {
   height: 100px;
+  /* Added by LZ */
+  background-color: #f8f9fa; /* Light background for better contrast */
+  border-bottom: 2px solid #ddd; /* Visual separation */
 }
 
 /* logo image */
@@ -17,28 +27,52 @@ header {
 .nav-link {
   color: #434343;
   margin: 5px;
+    /* Added by LZ */
+  font-size: 16px; /* Ensure readable font size */
+  text-decoration: none; /* Clear underline for a cleaner look */   
 }
 
 .nav-active {
   background-color: #3A8FB7;
   color: white;
   border-radius: 5px;
+  padding: 5px 10px; /* Add padding for better click targets */
 }
 
 a.nav-link:hover, a.nav-link:focus {
   background-color: #3A8FB7;
   color: white;
   border-radius: 5px;
+  text-decoration: none; /* Consistent hover style */
 }
 
 /* lightbox */
+/* lightbox */
 #lightbox {
-  margin-top: 20px;
+  margin-top: 20px; /* Space between the trigger and lightbox */
+  display: none; /* Hidden by default */
+  position: relative; /* Part of the normal flow */
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  color: white; /* Light text for contrast */
+  padding: 20px; /* Add spacing inside the lightbox */
+  border-radius: 10px; /* Rounded corners */
+  width: 100%; /* Full width under the trigger button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
 }
 
+
+#lightbox[aria-hidden="false"] {
+  display: block; /* Make visible when active */
+}
 /* footer */
 footer {
   margin-top: 40px;
+  /* Added by LZ */
+  background-color: #3A8FB7;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
 }
 
 /* container for toggle switch and text */
@@ -76,6 +110,7 @@ footer {
   right: 0;
   bottom: 0;
   background-color: #ccc;
+  border-radius: 34px; /* Added by LZ Consistent border radius */
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -88,6 +123,7 @@ footer {
   left: 4px;
   bottom: 4px;
   background-color: white;
+  border-radius: 50%; /* Added by LZ Round slider */
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -112,4 +148,148 @@ input:checked + .slider::before {
 
 .slider.round::before {
   border-radius: 50%;
+}
+
+/* Fixed by LZ, added the following */
+/* Accessible buttons */
+button {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background-color: #3A8FB7;
+  color: white;
+}
+
+button:hover, button:focus {
+  background-color: #2a6f92;
+  outline: 2px solid white;
+}
+
+/* Added by LZ */
+
+/* Main content */
+main {
+  margin-top: 120px; /* Offset to avoid overlapping fixed header */
+}
+
+.jumbotron {
+  padding: 30px 20px;
+  background-color: #f0f4f8; /* Light background for better readability */
+}
+
+.jumbotron img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+  border-radius: 10px; /* Slightly rounded corners */
+}
+
+h1, h2 {
+  font-family: Arial, sans-serif;
+  color: #3A8FB7;
+}
+
+p {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Section styles */
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Added by LZ for the ScheduleAcall.html*/
+form {
+  margin-top: 20px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%; 
+  max-width: 500px; /*Limit max width for readability */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px; 
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+textarea {
+  resize: vertical; /* Allow users to resize only vertically */
+}
+
+textarea:focus,
+input:focus {
+  outline: 2px solid #3A8FB7; /* High-contrast focus outline */
+  border-color: #3A8FB7;
+}
+/* Fieldset and legend */
+fieldset {
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+form fieldset div {
+  display: flex; /* Flexbox ensures horizontal alignment */
+  align-items: center; /* Vertically center-aligns the checkbox and text */
+  gap: 10px; /* Adds space between the checkbox and label text */
+  margin-bottom: 10px; /* Adds spacing between rows of checkboxes */
+}
+
+form fieldset input[type="checkbox"] {
+  margin: 0; /* Remove any default margin */
+}
+
+form fieldset label {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+legend {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Toggle switch */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }

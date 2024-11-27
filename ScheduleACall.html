@@ -16,7 +16,8 @@
   <header class="navbar navbar-expand-md fixed-top bg-light">
     <a class="navbar-brand" href="https://www.google.ca/"><img src="./images/empowerabilitylabslogo.png" alt="empower ability labs logo" ></a>
     <!-- Main Navigation for Empower Ability Labs-->
-    <nav> 
+     <!-- Fixed by LZ, added role="navigation" aria-label="Main Navigation" -->
+    <nav role="navigation" aria-label="Main Navigation"> 
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="EmpowerAbilityLab.html" >Home</a></li>
@@ -28,45 +29,58 @@
   </header>
 
   <!-- main landmark -->
-  <main>
+   <!-- Fixed by Lz, added role="main" -->
+  <main role="main">
     <div class="jumbotron">
       <div class="container">
-        <h1>Schedule A Call Now!</h1>
+        <!-- Fixed by Lz, added id="schedule-call-heading" -->
+        <h1 id="schedule-call-heading">Schedule A Call Now!</h1>
         <p>
           At Empower Ability Labs, we are dedicated to cultivating empathy and driving positive change through immersive experiences.  Fill out the form below and we’ll get back to you as soon as we can to schedule a call with our sales team!
         </p>
         <!-- image for schedule a call -->
-        <img src="./images/scheduleacall.png" alt="" >
+         <!-- Fixed by LZ, added alt="Schedule a call illustration" -->
+        <img src="./images/scheduleacall.png" alt="Schedule a call illustration" >
       </div>
     </div>
 
     <div class="container">
-      <form>
+      <!-- Fixed by Lz, added aria-labelledby="schedule-call-heading" -->
+      <form aria-labelledby="schedule-call-heading">
         <!-- input fields -->
         <label for="businessName">Business name: </label>
-        <input type="text" id="businessName" name="businessName"><br>
+        <!-- Fixed by Lz, added aria attribute -->
+        <input type="text" id="businessName" name="businessName" required aria-required="true" pattern="[a-zA-Z0-9\s]+" title="Enter a valid business name."><br>
         <label for="phoneNum">Phone number (613-123-1234): </label>
-        <input type="text" id="phoneNum" name="phoneNum"><br>
+        <input type="tel" id="phoneNum" name="phoneNum" required aria-required="true" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number must be in the format 613-123-1234"><br>
         <label for="email">Email (required): </label>
-        <input type="text" id="email" name="email"><br>
+        <input type="email" id="email" name="email" required aria-required="true" title="Enter a valid email address."><br>
 
         <!-- fieldset -->
+         <!-- Fixed by Lz -->
         <fieldset>
-          <legend>What would you like to talk about?</legend>
-          <input type="checkbox" id="check-1" name="check-1">
-          <label for="check-1">Awareness lab days and workshops</label><br>
-          <input type="checkbox" id="check-2" name="check-2" checked>
-          <label for="check-2">Invite a speaker with disabilities to your event</label><br>
-          <input type="checkbox" id="check-3" name="check-3">
-          <label for="check-3">Usability testing</label>
+          <legend id="talk-options">What would you like to talk about?</legend>
+          <div>
+            <input type="checkbox" id="check-1" name="check-1" aria-labelledby="talk-options option-1">
+            <label for="check-1" id="option-1">Awareness lab days and workshops</label>
+          </div>
+          <div>
+            <input type="checkbox" id="check-2" name="check-2" aria-labelledby="talk-options option-2" checked>
+            <label for="check-2" id="option-2">Invite a speaker with disabilities to your event</label><br>
+          </div>
+          <div>
+            <input type="checkbox" id="check-3" name="check-3" aria-labelledby="talk-options option-3">
+            <label for="check-3" id="option-3">Usability testing</label>
+          </div>
         </fieldset>
 
         <!-- text area -->
-        <label>Tell us about your event</label><br>
-        <textarea id="textArea" name="textArea" rows="5" cols="50">
-
-        </textarea>
-        <br>
+         <!-- Fixed by LZ added for="textArea"-->
+        <div>
+          <label for="textArea">Tell us about your event</label><br>
+          <textarea id="textArea" name="textArea" rows="5" cols="50" aria-describedby="textAreaHelp" placeholder="Provide details about your event">
+          </textarea>
+        </div>
 
         <!-- switch -->
         <div class="toggle-container">
@@ -76,13 +90,16 @@
           </label>
           <span class="toggle-text">Receive emails about updates and services</span>
         </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary">Schedule a Call</button>
         
       </form>
     </div>
   </main>
 
   <!-- footer landmark -->
-  <footer class="bg-dark text-white text-center py-3">
+  <footer role="contentinfo" class="bg-dark text-white text-center py-3">
     <p>© Copyright Empower Ability Labs Inc 2023. All rights reserved.</p>
   </footer>
 
