@@ -137,16 +137,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   // Form validation feedback
-  form.addEventListener("submit", (event) => {
-    const emailValue = emailField.value.trim();
-    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
-
-    if (!isEmailValid) {
-      event.preventDefault();
-      alert("Please enter a valid email address.");
-      emailField.focus();
-    }
-  });
+  if (form & emailField) {
+    form.addEventListener("submit", (event) => {
+      const emailValue = emailField.value.trim();
+      const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
+  
+      if (!isEmailValid) {
+        event.preventDefault();
+        alert("Please enter a valid email address.");
+        emailField.focus();
+      }
+    });
+  }
 
   // Smooth scrolling for navigation links (optional enhancement)
   // Fixed by QW: delete the optional enhancement, not functioned and no need for that
