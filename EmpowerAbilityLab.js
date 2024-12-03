@@ -16,10 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Services page functionality
   const sections = document.querySelectorAll(".container section");
-  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  // const navLinks = document.querySelectorAll(".navbar-nav .nav-link"); // no need
 
   console.log({ meetBtn, lightbox, closeBtn, speakerCheckbox, textArea, sections, form });
 
+// Navbar links functions
   // Added by QW: function for hamburger menu
   hamburgerMenu.addEventListener("click", () => {
     const isExpanded = hamburgerMenu.getAttribute("aria-expanded") === "true";
@@ -30,27 +31,23 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("hamburger menu works.");
   });
 
-  // Fixed by QW: the check box event is now functioning
-  if (speakerCheckbox & textArea) {
-    speakerCheckbox.addEventListener("change", () => {
-      console.log("checkbox is changed");
-      if (speakerCheckbox.checked) {
-        textArea.style.display = "block";
-      } else {
-        textArea.style.display = "none";
-      }
-      
-      console.log("checkbox event works");
-    
-    });
+  // Enable keyboard navigation for navigation links (ArrowLeft/ArrowRight)
+  // Fixed by QW: This function not work and unnecessary
+  // navLinks.forEach((link, index) => {
+  //   link.addEventListener("keydown", (event) => {
+  //     if (event.key === "ArrowRight") {
+  //       event.preventDefault();
+  //       const nextIndex = (index + 1) % navLinks.length; // Wrap to the first link
+  //       navLinks[nextIndex].focus();
+  //     } else if (event.key === "ArrowLeft") {
+  //       event.preventDefault();
+  //       const prevIndex = (index - 1 + navLinks.length) % navLinks.length; // Wrap to the last link
+  //       navLinks[prevIndex].focus();
+  //     }
+  //   });
+  // });
 
-    if (speakerCheckbox.checked) {
-      textArea.style.display = "block";
-    } else {
-      textArea.style.display = "none";
-    }
-  }
-  
+// "Home" page
   // Fixed by QW: deleted the dynamical function of adding a close button, it is unnecessary
   if (meetBtn & closeBtn & lightbox) {
     console.log("entering function for meetbtn");
@@ -74,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Toggle lightbox visibility when the "Meet the Empower Community" button is clicked
-    // ERROR for the meetBtn needs to fix: Cannot read properties of null (reading 'addEventListener')
     meetBtn.addEventListener("click", () => {
       const isHidden = lightbox.getAttribute("aria-hidden") === "true";
       isHidden ? openLightbox() : closeLightbox();
@@ -91,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Trap focus within the lightbox when it is open
-    // TO DO: this function seems not work
+    // TO DO: this function seems not work and unnecessary
     lightbox.addEventListener("keydown", (event) => {
       const focusableElements = lightbox.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
@@ -118,25 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Enable keyboard navigation for navigation links (ArrowLeft/ArrowRight)
-  // TO DO: This function not work
-  navLinks.forEach((link, index) => {
-    link.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        const nextIndex = (index + 1) % navLinks.length; // Wrap to the first link
-        navLinks[nextIndex].focus();
-      } else if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        const prevIndex = (index - 1 + navLinks.length) % navLinks.length; // Wrap to the last link
-        navLinks[prevIndex].focus();
-      }
-    });
-  });
-
-  // Smooth scrolling for navigation links (optional enhancement)
-  // Fixed by QW: delete the optional enhancement, not functioned and no need for that
-
+// "Services" page
   // Accessibility: Make sections focusable
   // TO DO: The focus is invisible, not sure if the function works
   sections.forEach((section) => {
@@ -144,6 +122,20 @@ document.addEventListener("DOMContentLoaded", () => {
     section.setAttribute("tabindex", "0"); // Allow keyboard users to focus on sections
   });
 
+// "Schedule a Call" page
+  // Fixed by QW: the check box event is now functioning
+  if (speakerCheckbox & textArea) {
+    textArea.style.display = speakerCheckbox.checked ? "block" : "none";
+
+    speakerCheckbox.addEventListener("change", () => {
+      console.log("checkbox is changed");
+
+      textArea.style.display = speakerCheckbox.checked ? "block" : "none";
+      
+      console.log("checkbox event works");
+    });
+  }
+  
   // Form validation feedback
   form.addEventListener("submit", (event) => {
     const emailValue = emailField.value.trim();
@@ -155,6 +147,9 @@ document.addEventListener("DOMContentLoaded", () => {
       emailField.focus();
     }
   });
+
+  // Smooth scrolling for navigation links (optional enhancement)
+  // Fixed by QW: delete the optional enhancement, not functioned and no need for that
 
   console.log("JavaScript executed after DOM is fully loaded");
 });
