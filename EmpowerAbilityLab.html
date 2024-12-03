@@ -14,6 +14,8 @@
   <!-- Bootstrap core CSS -->
   <link href="https://getbootstrap.com/docs/4.0/examples/jumbotron/jumbotron.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- font-awesome css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Custom styles for Empower Ability Labs -->
   <link rel="stylesheet" href="EmpowerAbilityLab.css"> 
 </head>
@@ -25,10 +27,17 @@
     <!--Fixed by CWD: Change href on logo to take you back to home page -->
     <a class="navbar-brand" href="EmpowerAbilityLab.html">
       <img src="./images/empowerabilitylabslogo.png" alt="empower ability labs logo" ></a>
+
+    <!-- Added by QW: Hamburger menu button -->
+    <button id="hamburger-menu" 
+    class="fa fa-bars" type="button" data-toggle="collapse" data-target="#navbar" 
+    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation ">
+    </button>
+    
     <!-- Main Navigation for Empower Ability Labs-->
     <!-- Fixed by LZ, added role="navigation" aria-label="Main Navigation" -->
-    <!-- Fixed by QW: deleted role -->
-    <nav aria-label="Main Navigation"> 
+    <!-- Fixed by QW: deleted role and aria-label, repeated attributes -->
+    <nav> 
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link nav-active" href="EmpowerAbilityLab.html" >Home</a></li>
@@ -53,8 +62,6 @@
         </button>
         <!-- Fixed by LZ, added role="dialog" aria-labelledby="lightboxTitle" aria-hidden="true" -->
         <div id="lightbox" class="invisible" role="dialog" aria-labelledby="lightboxTitle" aria-hidden="true">
-          <!-- Fixed by LZ, added button -->
-          <!-- <span style="font-weight: bold;">Community Steering Committee</span> -->
           <h2 id="lightboxTitle">Community Steering Committee</h2> 
           <p>
             We get an aha! moments from product managers who try our services for the first time. We offered many lab days, workshops and offered usability testing services to many companies and organizations including:
@@ -66,7 +73,8 @@
               <li>Government of Canada</li>
             </ul>
           </p>
-          <!-- <button type="button" class="btn-dark" aria-label="Close">×</button> -->
+          <!-- Fixed by QW: add close button in html for screen reader -->
+          <button type="button" class="btn-dark" aria-label="Close">×</button>
         </div>
       </div>
     </div>

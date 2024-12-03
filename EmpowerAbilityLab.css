@@ -16,8 +16,13 @@
   outline-offset: 2px;
 }
 
+/* Added by QW */
 /* header */
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
   height: 100px;
   /* Added by LZ */
   background-color: #f8f9fa; /* Light background for better contrast */
@@ -53,13 +58,35 @@ a.nav-active {
   text-decoration: none; /* Consistent hover style */
 }
 
-a.nav-link:hover, a.nav-link:focus {
+a.nav-link:hover, a.nav-link:focus, #hamburger-menu:focus {
   background-color: #204E63;
   color: white;
   border-radius: 5px;
   text-decoration: none; /* Consistent hover style */
   outline: 3px solid #204E63;
   outline-offset: 2px;
+}
+
+
+/* Added by QW */
+/* responsive design */
+#hamburger-menu {
+  display: none;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  #hamburger-menu {
+    background-color: #333;
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    border: none;
+  }
+
+  .container {
+    margin-top: 30px;
+  }
 }
 
 /* lightbox */
@@ -81,6 +108,20 @@ a.nav-link:hover, a.nav-link:focus {
 /* footer */
 footer {
   margin-top: 40px;
+}
+
+/* jumbotron in Services.html */
+.container-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+aside {
+  background-color: white;
+  padding: 20px; 
+  border-radius: 10px; 
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* container for toggle switch and text */
@@ -232,6 +273,7 @@ input:focus {
   outline: 2px solid #204E63; /* High-contrast focus outline */
   border-color: #204E63;
 }
+
 /* Fieldset and legend */
 fieldset {
   margin-bottom: 20px;
@@ -239,6 +281,7 @@ fieldset {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+
 form fieldset div {
   display: flex; /* Flexbox ensures horizontal alignment */
   align-items: center; /* Vertically center-aligns the checkbox and text */
@@ -282,17 +325,4 @@ legend {
   height: 0;
 }
 
-/* jumbotron in Services.html */
-.container-columns {
-  display: flex;
-  justify-content: space-between;
-}
-
-aside {
-  background-color: white;
-  padding: 20px; 
-  border-radius: 10px; 
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
 
