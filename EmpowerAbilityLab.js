@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // "Home" page
   // Fixed by QW: deleted the dynamical function of adding a close button, it is unnecessary
-  if (meetBtn & closeBtn & lightbox) {
+  if (meetBtn && closeBtn && lightbox) {
     console.log("entering function for meetbtn");
     
     // Function to open the lightbox
@@ -116,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // "Services" page
   // Accessibility: Make sections focusable
-  // TO DO: The focus is invisible, not sure if the function works
   sections.forEach((section) => {
     console.log("section is focused");
     section.setAttribute("tabindex", "0"); // Allow keyboard users to focus on sections
@@ -124,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // "Schedule a Call" page
   // Fixed by QW: the check box event is now functioning
-  if (speakerCheckbox & textArea) {
+  if (speakerCheckbox && textArea) {
     textArea.style.display = speakerCheckbox.checked ? "block" : "none";
 
     speakerCheckbox.addEventListener("change", () => {
@@ -137,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   // Form validation feedback
-  if (form & emailField) {
+  if (form && emailField) {
     form.addEventListener("submit", (event) => {
       const emailValue = emailField.value.trim();
       const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
