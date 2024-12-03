@@ -10,7 +10,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Page to schedule a call to EmpowerAbilityLab">
-  <meta name="author" content="Qiaoqing Wu, Li Zhou, Yue Gao">
+  <meta name="author" content="Qiaoqing Wu, Li Zhou, Yue Gao,  Caleb Watson-Danis">
   <title>Schedule a Call - Empower Ability Labs</title>
   <!-- Bootstrap core CSS -->
   <link href="https://getbootstrap.com/docs/4.0/examples/jumbotron/jumbotron.css" rel="stylesheet">
@@ -95,8 +95,9 @@
 
         <!-- text area -->
         <!-- Fixed by LZ added for="textArea"-->
-        <div>
-          <label for="textArea">Tell us about your event</label><br>
+        <!-- Fixed by QW: the display issue of the text area -->
+        <div id="textarea-div" style="display: none;">
+          <label for="textArea">Tell us about your event</label>
           <textarea id="textArea" name="textArea" rows="5" cols="50" aria-describedby="textAreaHelp" placeholder="Provide details about your event">
           </textarea>
         </div>
