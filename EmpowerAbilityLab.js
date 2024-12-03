@@ -94,6 +94,7 @@ sections.forEach((section) => {
 });
 
 // Enable keyboard navigation for navigation links (ArrowLeft/ArrowRight)
+// TO DO: keyboard not work, needs to fix
 navLinks.forEach((link, index) => {
   link.addEventListener("keydown", (event) => {
     if (event.key === "ArrowRight") {
@@ -109,16 +110,7 @@ navLinks.forEach((link, index) => {
 });
 
 // Smooth scrolling for navigation links (optional enhancement)
-navLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const targetId = link.getAttribute("href").replace(".html", "");
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      event.preventDefault();
-      targetSection.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
+// Fixed by QW: delete the optional enhancement, not functioned
 
 speakerCheckbox.addEventListener("change", () => {
   if (speakerCheckbox.checked) {

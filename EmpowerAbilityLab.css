@@ -98,6 +98,10 @@ a.nav-link:hover, a.nav-link:focus, #hamburger-menu:focus {
     padding: 10px;
   }
 
+  a.nav-link {
+    text-align: center;
+  }
+  
   .container {
     margin-top: 30px;
   }
