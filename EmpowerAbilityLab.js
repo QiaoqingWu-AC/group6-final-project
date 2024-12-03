@@ -3,14 +3,27 @@ const meetBtn = document.getElementById("meetBtn");
 const lightbox = document.getElementById("lightbox");
 const closeBtn = document.getElementById("close-btn");
 
+// hamburger menu
+const hamburgerMenu = document.getElementById("hamburger-menu");
+const navbar = document.getElementById("navbar");
+
 const form = document.querySelector("form");
 const textArea = document.getElementById("textArea");
 const speakerCheckbox = document.getElementById("check-2");
 const emailField = document.getElementById("email");
 
-// Add a close button dynamically to the lightbox
-// Fixed by QW: deleted the dynamical function of adding a close button, it is unnecessary
+// Added by QW: function for hamburger menu
+hamburgerMenu.addEventListener("click", () => {
+  const isExpanded = hamburgerMenu.getAttribute("aria-expanded") === "true";
 
+  // toggle "show"
+  navbar.classList.toggle("show");
+
+  // update aria-expanded
+  hamburgerMenu.setAttribute("aria-expanded", !isExpanded);
+});
+
+// Fixed by QW: deleted the dynamical function of adding a close button, it is unnecessary
 // Function to open the lightbox
 function openLightbox() {
   lightbox.classList.remove("invisible");
@@ -70,7 +83,6 @@ lightbox.addEventListener("keydown", (event) => {
     }
   }
 });
-
 
 // Services page functionality
 const sections = document.querySelectorAll("main section");
