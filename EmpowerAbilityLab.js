@@ -88,8 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
 // "Schedule a Call" page
-  const textArea = document.getElementById("textarea-div");
+  const textAreaBlock = document.getElementById("textarea-div");
   const speakerCheckbox = document.getElementById("check-2");
+  const textArea = document.getElementById("textArea");
 
   const submitBtn = document.getElementById("submit-btn")
   const formMsg = document.getElementById("form-message");
@@ -104,14 +105,20 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log({ textArea, speakerCheckbox, submitBtn, switchImage, switchBtn });
 
   if (speakerCheckbox && textArea && submitBtn && switchImage && switchBtn) {
-    textArea.style.display = speakerCheckbox.checked ? "block" : "none";
+    textAreaBlock.style.display = speakerCheckbox.checked ? "block" : "none";
 
     // Fixed by QW: the check box event is now functioning
     speakerCheckbox.addEventListener("change", () => {
       console.log("checkbox is changed");
 
-      textArea.style.display = speakerCheckbox.checked ? "block" : "none";
-      
+      if (speakerCheckbox.checked) {
+        textAreaBlock.style.display = "block";
+        textArea.setAttribute("tabindex", "0"); 
+        textArea.focus();
+      } else {
+        textAreaBlock.style.display = "none"; 
+        textArea.removeAttribute("tabindex"); 
+      }
       console.log("checkbox event works");
     });
 
