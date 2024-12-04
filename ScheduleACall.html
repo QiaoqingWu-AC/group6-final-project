@@ -98,20 +98,19 @@
         <!-- Fixed by QW: the display issue of the text area -->
         <div id="textarea-div" style="display: none;">
           <label for="textArea">Tell us about your event</label>
+          <!-- Fixed by QW: provide inline instruction, fixed aria label error -->
+          <span id="textAreaHelp">Provide details about your event.</span><br>
           <textarea id="textArea" name="textArea" rows="5" cols="50" aria-describedby="textAreaHelp">
           </textarea>
-          <!-- Fixed by QW: provide inline instruction, fixed aria label error -->
-          <span id="textAreaHelp">Provide details about your event.</span>
         </div>
 
         <!-- switch -->
         <div class="toggle-container">
-          <!-- Fixed by QW: provide id and for -->
-          <label class="toggle-switch" for="switch-btn">
-            <input id="switch-btn" type="checkbox">
-            <span class="slider round"></span>
-          </label>
-          <span class="toggle-text">Receive emails about updates and services</span>
+          <!-- Fixed by QW: use switch image to follow the assignment requirement -->
+          <button id="switch-btn" aria-pressed="true" aria-labelledby="switch-instruction">
+            <img id="switch-img" src="./images/toggle-on.png" alt="Switch is on, receiving emails">
+          </button>
+          <span id="switch-instruction" class="toggle-text">Receive emails about updates and services</span>
         </div>
 
         <!-- Submit button -->

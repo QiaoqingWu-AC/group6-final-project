@@ -66,7 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 // "Services" page
-  // Accessibility: Make sections focusable // Deleted by QW: js function is redundant
+  // Accessibility: Make sections focusable // Deleted by QW: this function is redundant
+
+  // Added by QW: focus section after clicking the link
   const asideLinks = document.querySelectorAll("aside a[href^='#']");
   console.log(asideLinks);
   
@@ -121,8 +123,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Added by QW: switch image function
+  const switchImage = document.getElementById("switch-img");
+  const switchBtn = document.getElementById("switch-btn");
+
+  let isOn = false;
+
+  switchBtn.addEventListener("click", () => {
+    isOn = !isOn;
+    console.log("image button is clicked, is on: ", isOn);
+
+    if (isOn) {
+      switchImage.src = "./images/toggle-on.png";
+      switchImage.alt = "Switch is on, receiving emails";
+      switchBtn.setAttribute("aria-pressed", true);
+    } else {
+      switchImage.src = "./images/toggle-off.png";
+      switchImage.alt = "Switch is off, not receiving emails";
+      switchBtn.setAttribute("aria-pressed", false);
+    }
+  });
+
   // Smooth scrolling for navigation links (optional enhancement)
-  // Fixed by QW: delete the optional enhancement, not functioned and no need for that
+  // Deleted by QW: delete the optional enhancement, not functioned and no need for that
 
   console.log("JavaScript executed after DOM is fully loaded");
 });
