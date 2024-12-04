@@ -191,6 +191,7 @@ section {
 }
 
 /* Added by LZ for the ScheduleAcall.html*/
+/* Fixed by QW */
 form {
   margin-top: 20px;
 }
@@ -212,7 +213,13 @@ textarea {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
+}
+
+.error-msg {
+  color: darkred;
+  font-weight: bold;
+  padding-left: 15px;
 }
 
 input[type="checkbox"] {

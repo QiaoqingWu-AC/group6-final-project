@@ -92,9 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const speakerCheckbox = document.getElementById("check-2");
 
   const form = document.querySelector("form");
-  const emailField = document.getElementById("email");
 
-  console.log({ textArea, speakerCheckbox, form, emailField });
+  console.log({ textArea, speakerCheckbox });
 
   // Fixed by QW: the check box event is now functioning
   if (speakerCheckbox && textArea) {
@@ -109,17 +108,58 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   
-  // Form validation feedback
-  if (form && emailField) {
-    form.addEventListener("submit", (event) => {
-      const emailValue = emailField.value.trim();
-      const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
-  
-      if (!isEmailValid) {
-        event.preventDefault();
-        alert("Please enter a valid email address.");
-        emailField.focus();
+  // Added by QW: Form validation feedback
+  const businessNameField = document.getElementById("businessName");
+  const phoneField = document.getElementById("phoneNum");
+  const emailField = document.getElementById("email");
+
+  const businessNameError = document.getElementById("name-error");
+  const phoneError = document.getElementById("phone-error");
+  const emailError = document.getElementById("email-error");
+
+  const submitBtn = document.getElementById("submit-btn");
+
+  if (form) {
+    form.addEventListener("submit", () => {
+      let isValid = true;
+
+      // business name validation
+      if (!businessNameField.ariaValueMax.trim()) {
+        businessNameError.textContent = "Please enter a valid business name.";
+        businessNameError.style.display = "inline-block";
+        isValid = false;
+      } else {
+        businessNameError.style.display = "none";
       }
+
+      // Phone number validation
+      const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+      if (!phoneField.value.trim()) {
+        phoneError.textContent = "Phone number is required.";
+        phoneError.style.display = "inline-block";
+        isValid = false;
+      } else if (!phonePattern.test(phoneField.value.trim())) {
+        phoneError.textContent = "Phone number must be in the format 613-123-1234.";
+        phoneError.style.display = "inline-block";
+        isValid = false;
+      } else {
+        phoneError.style.display = "none";
+      }
+
+      // Email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailField.value.trim()) {
+        emailError.textContent = "Email address is required.";
+        emailError.style.display = "inline-block";
+        isValid = false;
+      } else if (!emailPattern.test(emailField.value.trim())) {
+        emailError.textContent = "Please enter a valid email address.";
+        emailError.style.display = "inline-block";
+        isValid = false;
+      } else {
+        emailError.style.display = "none";
+      }
+
     });
   }
 

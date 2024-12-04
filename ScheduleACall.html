@@ -46,8 +46,6 @@
   </header>
 
   <!-- main landmark -->
-  <!-- Fixed by Lz, added role="main" -->
-  <!-- Fixed by QW: deleted role. It is main landmark -->
   <main>
     <div class="jumbotron">
       <div class="container">
@@ -57,25 +55,31 @@
           At Empower Ability Labs, we are dedicated to cultivating empathy and driving positive change through immersive experiences.  Fill out the form below and we’ll get back to you as soon as we can to schedule a call with our sales team!
         </p>
         <!-- image for schedule a call -->
-        <!-- Fixed by LZ, added alt="Schedule a call illustration" -->
-        <!-- Fixed by QW: deleted alt="Schedule a call illustration" -->
         <img src="./images/scheduleacall.png" alt="" >
       </div>
     </div>
 
     <div class="container">
+
+      <!-- Added by QW: thank you or error message -->
+      <div id="form-message" style="display: none; color: darkgreen;"></div>
+
       <!-- Fixed by Lz, added aria-labelledby="schedule-call-heading" -->
       <form aria-labelledby="schedule-call-heading">
         <!-- input fields -->
         <label for="businessName">Business name: </label>
         <!-- Fixed by Lz, added aria attribute -->
-        <input type="text" id="businessName" name="businessName" aria-required="true" title="Enter a valid business name."><br>
+        <input type="text" id="businessName" name="businessName" aria-required="true" aria-labelledby="name-error">
+        <span id="name-error" class="error-msg">Please enter a valid business name.</span>
 
         <label for="phoneNum">Phone number (613-123-1234): </label>
-        <input type="tel" id="phoneNum" name="phoneNum" aria-required="true" title="Phone number must be in the format 613-123-1234"><br>
+        <input type="tel" id="phoneNum" name="phoneNum" aria-required="true" aria-labelledby="phone-error">
+        <span id="phone-error" class="error-msg">Phone number must be in the format 613-123-1234.</span>
+
 
         <label for="email">Email (required): </label>
-        <input type="email" id="email" name="email" aria-required="true" title="Enter a valid email address."><br>
+        <input type="email" id="email" name="email" aria-required="true" aria-labelledby="email-error">
+        <span id="email-error" class="error-msg">Please enter a valid email address.</span>
 
         <!-- fieldset -->
         <!-- Fixed by Lz -->
@@ -116,7 +120,7 @@
         </div>
 
         <!-- Submit button -->
-        <button type="submit" class="btn btn-dark">Schedule a Call</button>
+        <button id="submit-btn" type="submit" class="btn btn-dark">Schedule a Call</button>
         
       </form>
     </div>
