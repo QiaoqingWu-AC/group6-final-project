@@ -94,14 +94,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("submit-btn")
   const formMsg = document.getElementById("form-message");
 
+  const switchImage = document.getElementById("switch-img");
+  const switchBtn = document.getElementById("switch-btn");
+
   const form = document.querySelector("form");
 
-  console.log({ textArea, speakerCheckbox, submitBtn });
+  console.log({ textArea, speakerCheckbox, submitBtn, switchImage, switchBtn });
 
-  // Fixed by QW: the check box event is now functioning
-  if (speakerCheckbox && textArea && submitBtn) {
+  if (speakerCheckbox && textArea && submitBtn && switchImage && switchBtn) {
     textArea.style.display = speakerCheckbox.checked ? "block" : "none";
 
+    // Fixed by QW: the check box event is now functioning
     speakerCheckbox.addEventListener("change", () => {
       console.log("checkbox is changed");
 
@@ -110,37 +113,31 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("checkbox event works");
     });
 
+    // Added by QW: submit button event
     submitBtn.addEventListener("click", () => {
       console.log("submit button is clicked");
       formMsg.textContent = "Thank you! Your request has been submitted.";
-      formMessage.style.display = "block";
+      formMsg.style.display = "block";
     });
 
+    // Added by QW: switch image event  
+    let isOn = false;
+
+    switchBtn.addEventListener("click", () => {
+      isOn = !isOn;
+      console.log("image button is clicked, is on: ", isOn);
+
+      if (isOn) {
+        switchImage.src = "./images/toggle-on.png";
+        switchImage.alt = "Switch is on, receiving emails";
+        switchBtn.setAttribute("aria-pressed", true);
+      } else {
+        switchImage.src = "./images/toggle-off.png";
+        switchImage.alt = "Switch is off, not receiving emails";
+        switchBtn.setAttribute("aria-pressed", false);
+      }
+    });
   }
-
-  
-
-  // Added by QW: switch image function
-  const switchImage = document.getElementById("switch-img");
-  const switchBtn = document.getElementById("switch-btn");
-  console.log({ switchImage, switchBtn });
-  
-  let isOn = false;
-
-  switchBtn.addEventListener("click", () => {
-    isOn = !isOn;
-    console.log("image button is clicked, is on: ", isOn);
-
-    if (isOn) {
-      switchImage.src = "./images/toggle-on.png";
-      switchImage.alt = "Switch is on, receiving emails";
-      switchBtn.setAttribute("aria-pressed", true);
-    } else {
-      switchImage.src = "./images/toggle-off.png";
-      switchImage.alt = "Switch is off, not receiving emails";
-      switchBtn.setAttribute("aria-pressed", false);
-    }
-  });
 
   // Smooth scrolling for navigation links (optional enhancement)
   // Deleted by QW: delete the optional enhancement, not functioned and no need for that
