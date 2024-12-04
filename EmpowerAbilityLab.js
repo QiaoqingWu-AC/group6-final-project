@@ -108,65 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   
-  // Added by QW: Form validation feedback
-  const businessNameField = document.getElementById("businessName");
-  const phoneField = document.getElementById("phoneNum");
-  const emailField = document.getElementById("email");
-
-  const businessNameError = document.getElementById("name-error");
-  const phoneError = document.getElementById("phone-error");
-  const emailError = document.getElementById("email-error");
-
-  const submitBtn = document.getElementById("submit-btn");
-
-  if (form) {
-    form.addEventListener("submit", () => {
-      let isValid = true;
-
-      // business name validation
-      if (!businessNameField.ariaValueMax.trim()) {
-        businessNameError.textContent = "Please enter a valid business name.";
-        businessNameError.style.display = "inline-block";
-        isValid = false;
-      } else {
-        businessNameError.style.display = "none";
-      }
-
-      // Phone number validation
-      const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
-      if (!phoneField.value.trim()) {
-        phoneError.textContent = "Phone number is required.";
-        phoneError.style.display = "inline-block";
-        isValid = false;
-      } else if (!phonePattern.test(phoneField.value.trim())) {
-        phoneError.textContent = "Phone number must be in the format 613-123-1234.";
-        phoneError.style.display = "inline-block";
-        isValid = false;
-      } else {
-        phoneError.style.display = "none";
-      }
-
-      // Email validation
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailField.value.trim()) {
-        emailError.textContent = "Email address is required.";
-        emailError.style.display = "inline-block";
-        isValid = false;
-      } else if (!emailPattern.test(emailField.value.trim())) {
-        emailError.textContent = "Please enter a valid email address.";
-        emailError.style.display = "inline-block";
-        isValid = false;
-      } else {
-        emailError.style.display = "none";
-      }
-
-    });
-  }
+  
 
   // Added by QW: switch image function
   const switchImage = document.getElementById("switch-img");
   const switchBtn = document.getElementById("switch-btn");
-
+  console.log({ switchImage, switchBtn });
+  
   let isOn = false;
 
   switchBtn.addEventListener("click", () => {
