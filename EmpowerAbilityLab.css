@@ -109,18 +109,14 @@ a.nav-link:hover, a.nav-link:focus, #hamburger-menu:focus {
 
 /* lightbox */
 #lightbox {
+  display: none;
   margin-top: 20px; /* Space between the trigger and lightbox */
-  display: none; /* Hidden by default */
-  position: relative; /* Part of the normal flow */
+  position: relative;
   background-color: white;
   padding: 20px; /* Add spacing inside the lightbox */
   border-radius: 10px; /* Rounded corners */
   width: 100%; /* Full width under the trigger button */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
-}
-
-#lightbox[aria-hidden="false"] {
-  display: block; /* Make visible when active */
 }
 
 /* footer */

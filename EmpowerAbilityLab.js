@@ -31,40 +31,24 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("hamburger menu works.");
   });
 
-  // Enable keyboard navigation for navigation links (ArrowLeft/ArrowRight)
-  // Fixed by QW: This function not work and unnecessary
-  // navLinks.forEach((link, index) => {
-  //   link.addEventListener("keydown", (event) => {
-  //     if (event.key === "ArrowRight") {
-  //       event.preventDefault();
-  //       const nextIndex = (index + 1) % navLinks.length; // Wrap to the first link
-  //       navLinks[nextIndex].focus();
-  //     } else if (event.key === "ArrowLeft") {
-  //       event.preventDefault();
-  //       const prevIndex = (index - 1 + navLinks.length) % navLinks.length; // Wrap to the last link
-  //       navLinks[prevIndex].focus();
-  //     }
-  //   });
-  // });
-
 // "Home" page
   // Fixed by QW: deleted the dynamical function of adding a close button, it is unnecessary
   if (meetBtn && closeBtn && lightbox) {
     console.log("entering function for meetbtn");
     
     // Function to open the lightbox
+    // Fixed by QW: solved a css issue, simplify the js codes
     function openLightbox() {
-      lightbox.classList.remove("invisible");
-      lightbox.classList.add("visible");
+      lightbox.style.display = "block";
       lightbox.setAttribute("aria-hidden", "false");
       meetBtn.setAttribute("aria-expanded", "true");
       closeBtn.focus(); // Focus on the close button for accessibility
     }
 
     // Function to close the lightbox
+    // Fixed by QW: solved a css issue, simplify the js codes
     function closeLightbox() {
-      lightbox.classList.remove("visible");
-      lightbox.classList.add("invisible");
+      lightbox.style.display = "none"
       lightbox.setAttribute("aria-hidden", "true");
       meetBtn.setAttribute("aria-expanded", "false");
       meetBtn.focus(); // Return focus to the button for accessibility
@@ -86,32 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Trap focus within the lightbox when it is open
-    // TO DO: this function seems not work and unnecessary
-    lightbox.addEventListener("keydown", (event) => {
-      const focusableElements = lightbox.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      const focusableArray = Array.from(focusableElements);
-      const currentIndex = focusableArray.indexOf(document.activeElement);
+    // Trap focus within the lightbox when it is open // Deleted by QW: The focus-trapping function is redundant
 
-      if (focusableArray.length > 0) {
-        // Arrow Down or Arrow Right: Move focus to the next element
-        if (event.key === "ArrowDown" || event.key === "ArrowRight") {
-          event.preventDefault();
-          const nextIndex = (currentIndex + 1) % focusableArray.length;
-          focusableArray[nextIndex].focus();
-        }
-
-        // Arrow Up or Arrow Left: Move focus to the previous element
-        if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
-          event.preventDefault();
-          const prevIndex =
-            (currentIndex - 1 + focusableArray.length) % focusableArray.length;
-          focusableArray[prevIndex].focus();
-        }
-      }
-    });
   }
 
 // "Services" page
