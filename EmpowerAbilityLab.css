@@ -105,6 +105,20 @@ a.nav-link:hover, a.nav-link:focus, #hamburger-menu:focus {
   .container {
     margin-top: 30px;
   }
+
+  .error-msg {
+    margin-bottom: 20px;
+  }
+
+  .learnmore-div {
+    margin: 0 10px 10px 10px;
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px; 
+    width: 100%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+  }
 }
 
 /* lightbox */
@@ -216,9 +230,17 @@ textarea {
   margin-bottom: 15px;
 }
 
+/* Added by QW */
 .error-msg {
   font-weight: bold;
-  padding-left: 15px;
+  color: #204E63;
+}
+
+#form-message {
+  display: none; 
+  color: darkgreen; 
+  font-weight: bold;
+  padding: 15px;
 }
 
 input[type="checkbox"] {

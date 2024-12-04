@@ -62,23 +62,23 @@
     <div class="container">
 
       <!-- Added by QW: thank you or error message -->
-      <div id="form-message" style="display: none; color: darkgreen;"></div>
+      <div id="form-message"></div>
 
       <!-- Fixed by Lz, added aria-labelledby="schedule-call-heading" -->
       <form aria-labelledby="schedule-call-heading">
         <!-- input fields -->
         <label for="businessName">Business name: </label>
         <!-- Fixed by Lz, added aria attribute -->
-        <input type="text" id="businessName" name="businessName" aria-required="true" aria-labelledby="name-error" required>
+        <input type="text" id="businessName" name="businessName" aria-required="true" aria-labelledby="name-error">
         <span id="name-error" class="error-msg">Please enter a valid business name.</span>
 
         <label for="phoneNum">Phone number (613-123-1234): </label>
-        <input type="tel" id="phoneNum" name="phoneNum" aria-required="true" aria-labelledby="phone-error" pattern="^\d{3}-\d{3}-\d{4}$" required>
+        <input type="tel" id="phoneNum" name="phoneNum" aria-required="true" aria-labelledby="phone-error">
         <span id="phone-error" class="error-msg">Phone number must be in the format 613-123-1234.</span>
 
 
         <label for="email">Email (required): </label>
-        <input type="email" id="email" name="email" aria-required="true" aria-labelledby="email-error" pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" required>
+        <input type="email" id="email" name="email" aria-required="true" aria-labelledby="email-error">
         <span id="email-error" class="error-msg">Please enter a valid email address includes "@".</span>
 
         <!-- fieldset -->

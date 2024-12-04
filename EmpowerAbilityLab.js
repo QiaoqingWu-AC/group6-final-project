@@ -97,7 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const switchImage = document.getElementById("switch-img");
   const switchBtn = document.getElementById("switch-btn");
 
-  const form = document.querySelector("form");
+  const businessNameField = document.getElementById("businessName");
+  const phoneField = document.getElementById("phoneNum");
+  const emailField = document.getElementById("email");
 
   console.log({ textArea, speakerCheckbox, submitBtn, switchImage, switchBtn });
 
@@ -113,29 +115,85 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("checkbox event works");
     });
 
-    // Added by QW: submit button event
-    submitBtn.addEventListener("click", () => {
-      console.log("submit button is clicked");
-      formMsg.textContent = "Thank you! Your request has been submitted.";
-      formMsg.style.display = "block";
-    });
-
     // Added by QW: switch image event  
-    let isOn = false;
+    let isOn = true;
 
-    switchBtn.addEventListener("click", () => {
+    switchBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+
       isOn = !isOn;
       console.log("image button is clicked, is on: ", isOn);
 
-      if (isOn) {
-        switchImage.src = "./images/toggle-on.png";
-        switchImage.alt = "Switch is on, receiving emails";
-        switchBtn.setAttribute("aria-pressed", true);
-      } else {
+      if (!isOn) {
         switchImage.src = "./images/toggle-off.png";
         switchImage.alt = "Switch is off, not receiving emails";
         switchBtn.setAttribute("aria-pressed", false);
+      } else {
+        switchImage.src = "./images/toggle-on.png";
+        switchImage.alt = "Switch is on, receiving emails";
+        switchBtn.setAttribute("aria-pressed", true);
       }
+    });
+
+    // Added by QW: submit button event
+    submitBtn.addEventListener("click", (event) => {
+      event.preventDefault(); // Prevent actual form submission
+      console.log("submit button is clicked");
+
+      let isValid = true;
+      let errorMessages = [];
+
+      formMsg.style.display = "none";
+      formMsg.innerHTML = ""; // Clear previous messages
+
+      // Validate Business Name
+      if (!businessNameField.value.trim()) {
+        errorMessages.push("Business name is required.");
+        isValid = false;
+      }
+
+      // Validate Phone Number
+      const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+      if (!phoneField.value.trim()) {
+        errorMessages.push("Phone number is required.");
+        isValid = false;
+      } else if (!phonePattern.test(phoneField.value.trim())) {
+        errorMessages.push("Phone number must be in the format 613-123-1234.");
+        isValid = false;
+      }
+
+      // Validate Email
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailField.value.trim()) {
+        errorMessages.push("Email address is required.");
+        isValid = false;
+      } else if (!emailPattern.test(emailField.value.trim())) {
+        errorMessages.push("Please enter a valid email address.");
+        isValid = false;
+      }
+
+      // Display messages based on validation
+      formMsg.style.display = "block";
+      if (isValid) {
+        formMsg.innerHTML = "<p style='color: darkgreen;'>Thank you! Your request has been submitted.</p>";
+      } else {
+        const errorHeading = document.createElement("p");
+        errorHeading.textContent = "Errors";
+        errorHeading.style.color = "red";
+        formMsg.appendChild(errorHeading);
+
+        const errorList = document.createElement("ul");
+        errorList.style.color = "red";
+        errorMessages.forEach((error) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = error;
+          errorList.appendChild(listItem);
+        });
+        formMsg.appendChild(errorList);
+      }
+
+      formMsg.setAttribute("tabindex", "0");
+      formMsg.focus();
     });
   }
 
