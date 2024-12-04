@@ -9,17 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburgerMenu = document.getElementById("hamburger-menu");
   const navbar = document.getElementById("navbar");
 
-  const form = document.querySelector("form");
-  const textArea = document.getElementById("textarea-div");
-  const speakerCheckbox = document.getElementById("check-2");
-  const emailField = document.getElementById("email");
-
-  // Services page functionality
-  const sections = document.querySelectorAll(".container section");
-  // const navLinks = document.querySelectorAll(".navbar-nav .nav-link"); // no need
-
-  console.log({ meetBtn, lightbox, closeBtn, speakerCheckbox, textArea, sections, form });
-
 // Navbar links functions
   // Added by QW: function for hamburger menu
   hamburgerMenu.addEventListener("click", () => {
@@ -32,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 // "Home" page
+  console.log({ meetBtn, lightbox, closeBtn });
+
   // Fixed by QW: deleted the dynamical function of adding a close button, it is unnecessary
   if (meetBtn && closeBtn && lightbox) {
     console.log("entering function for meetbtn");
@@ -75,13 +66,34 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 // "Services" page
-  // Accessibility: Make sections focusable
-  sections.forEach((section) => {
-    console.log("section is focused");
-    section.setAttribute("tabindex", "0"); // Allow keyboard users to focus on sections
+  // Accessibility: Make sections focusable // Deleted by QW: js function is redundant
+  const asideLinks = document.querySelectorAll("aside a[href^='#']");
+  console.log(asideLinks);
+  
+  asideLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const targetId = link.getAttribute("href").substring(1);
+      console.log("targeId:", targetId);
+      
+      const targetSection = document.getElementById(targetId);
+      console.log("targetSection: ", targetSection);
+      
+      if (targetSection) {
+        targetSection.focus();
+      }
+    });
   });
+  
 
 // "Schedule a Call" page
+  const textArea = document.getElementById("textarea-div");
+  const speakerCheckbox = document.getElementById("check-2");
+
+  const form = document.querySelector("form");
+  const emailField = document.getElementById("email");
+
+  console.log({ textArea, speakerCheckbox, form, emailField });
+
   // Fixed by QW: the check box event is now functioning
   if (speakerCheckbox && textArea) {
     textArea.style.display = speakerCheckbox.checked ? "block" : "none";
