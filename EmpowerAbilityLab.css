@@ -217,7 +217,6 @@ textarea {
 }
 
 .error-msg {
-  color: darkred;
   font-weight: bold;
   padding-left: 15px;
 }

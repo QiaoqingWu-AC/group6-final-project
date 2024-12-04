@@ -91,12 +91,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const textArea = document.getElementById("textarea-div");
   const speakerCheckbox = document.getElementById("check-2");
 
+  const submitBtn = document.getElementById("submit-btn")
+  const formMsg = document.getElementById("form-message");
+
   const form = document.querySelector("form");
 
-  console.log({ textArea, speakerCheckbox });
+  console.log({ textArea, speakerCheckbox, submitBtn });
 
   // Fixed by QW: the check box event is now functioning
-  if (speakerCheckbox && textArea) {
+  if (speakerCheckbox && textArea && submitBtn) {
     textArea.style.display = speakerCheckbox.checked ? "block" : "none";
 
     speakerCheckbox.addEventListener("change", () => {
@@ -106,8 +109,15 @@ document.addEventListener("DOMContentLoaded", () => {
       
       console.log("checkbox event works");
     });
+
+    submitBtn.addEventListener("click", () => {
+      console.log("submit button is clicked");
+      formMsg.textContent = "Thank you! Your request has been submitted.";
+      formMessage.style.display = "block";
+    });
+
   }
-  
+
   
 
   // Added by QW: switch image function
